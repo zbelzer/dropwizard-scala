@@ -3,7 +3,7 @@ name := "dropwizard-scala"
 
 version := "0.8.0"
 
-organization := "com.massrelevance"
+organization  := "com.clearstorydata"
 
 scalaVersion := "2.11.7"
 
@@ -45,24 +45,30 @@ publishArtifact in Test := false
 pomIncludeRepository := { x => false }
 
 pomExtra := (
-  <url>https://github.com/bretthoerner/dropwizard-scala</url>
-    <licenses>
-      <license>
-        <name>Apache License 2.0</name>
-        <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-        <distribution>repo</distribution>
-      </license>
-    </licenses>
-    <scm>
-      <url>git@github.com:bretthoerner/dropwizard-scala.git</url>
-      <connection>scm:git:git@github.com:bretthoerner/dropwizard-scala.git</connection>
-    </scm>
-    <developers>
-      <developer>
-        <id>bretthoerner</id>
-        <name>Brett Hoerner</name>
-        <url>http://bretthoerner.com</url>
-        <timezone>-6</timezone>
-      </developer>
-    </developers>
-  )
+  <url>https://github.com/clearstorydata/dropwizard-scala</url>
+  <licenses>
+    <license>
+      <name>Apache License 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>git@github.com:clearstorydata/dropwizard-scala.git</url>
+    <connection>scm:git:git@github.com:clearstorydata/dropwizard-scala.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>bretthoerner</id>
+      <name>Brett Hoerner</name>
+      <url>http://bretthoerner.com</url>
+      <timezone>-6</timezone>
+    </developer>
+    <developer>
+      <id>bretthoerner</id>
+      <name>Mark Hamstra</name>
+      <url>http://clearstorydata.com</url>
+      <timezone>-8</timezone>
+    </developer>
+  </developers>
+)
