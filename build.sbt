@@ -54,7 +54,7 @@ pomExtra := (
       <timezone>-6</timezone>
     </developer>
     <developer>
-      <id>bretthoerner</id>
+      <id>markhamstra</id>
       <name>Mark Hamstra</name>
       <url>http://clearstorydata.com</url>
       <timezone>-8</timezone>
