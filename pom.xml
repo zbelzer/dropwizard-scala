@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.clearstorydata</groupId>
-  <artifactId>dropwizard-scala_2.9.3</artifactId>
+  <artifactId>dropwizard-scala_2.10</artifactId>
   <packaging>jar</packaging>
   <description>dropwizard-scala</description>
   <version>0.6.2-1.1-SNAPSHOT</version>
@@ -42,7 +42,8 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     <encoding>UTF-8</encoding>
-    <scala.version>2.9.3</scala.version>
+    <scala.version>2.10.3</scala.version>
+    <scala.binary.version>2.10</scala.binary.version>
     <java.version>1.5</java.version>
   </properties>
 
@@ -70,8 +71,8 @@
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.module</groupId>
-      <artifactId>jackson-module-scala_${scala.version}</artifactId>
-      <version>2.2.2</version>
+      <artifactId>jackson-module-scala_${scala.binary.version}</artifactId>
+      <version>2.2.3</version>
     </dependency>
     <dependency>
       <groupId>com.timgroup</groupId>
@@ -82,7 +83,7 @@
     <!-- Testing -->
     <dependency>
       <groupId>org.scalatest</groupId>
-      <artifactId>scalatest_${scala.version}</artifactId>
+      <artifactId>scalatest_${scala.binary.version}</artifactId>
       <version>2.0.M5b</version>
       <scope>test</scope>
     </dependency>
