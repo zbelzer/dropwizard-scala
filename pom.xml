@@ -5,7 +5,7 @@
   <artifactId>dropwizard-scala_2.10</artifactId>
   <packaging>jar</packaging>
   <description>dropwizard-scala</description>
-  <version>0.6.2-1.1</version>
+  <version>0.6.2-1.2-SNAPSHOT</version>
   <name>dropwizard-scala</name>
   <organization>
     <name>com.clearstorydata</name>
