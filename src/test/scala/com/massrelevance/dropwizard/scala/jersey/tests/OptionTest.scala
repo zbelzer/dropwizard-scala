@@ -4,9 +4,9 @@ import javax.ws.rs.core.{Application, MediaType}
 import javax.ws.rs.{GET, Path, Produces, QueryParam}
 
 import com.massrelevance.dropwizard.scala.inject.ScalaCollectionsQueryParamFactoryProvider
-import io.dropwizard.jersey.DropwizardResourceConfig
+import org.glassfish.jersey.server.ResourceConfig
 import org.glassfish.jersey.test.JerseyTest
-import org.junit.{Assert, Test}
+import org.junit.{Test, Assert}
 
 class OptionTest extends JerseyTest {
 
@@ -49,8 +49,9 @@ class OptionTest extends JerseyTest {
   }
 
   override def configure(): Application = {
-    val config = new DropwizardResourceConfig()
-    config.getClasses.add(classOf[ScalaCollectionsQueryParamFactoryProvider])
+    val config = new ResourceConfig()
+    config.register(classOf[ScalaCollectionsQueryParamFactoryProvider])
+    config.register(classOf[ExampleResource])
     config
   }
 
