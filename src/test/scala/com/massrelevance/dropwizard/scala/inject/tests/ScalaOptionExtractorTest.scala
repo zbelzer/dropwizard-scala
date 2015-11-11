@@ -1,23 +1,22 @@
 package com.massrelevance.dropwizard.scala.inject.tests
 
-import com.massrelevance.dropwizard.scala.inject.ScalaOptionExtractor
-import com.massrelevance.dropwizard.scala.util.StringExtractor
-import com.sun.jersey.core.util.MultivaluedMapImpl
+import com.massrelevance.dropwizard.scala.inject.ScalaOptionStringExtractor
+import org.glassfish.jersey.internal.util.collection.MultivaluedStringMap
 import org.scalatest.{FlatSpec, Matchers}
 
 class ScalaOptionExtractorTest extends FlatSpec with Matchers {
-  val extractor = new ScalaOptionExtractor(new StringExtractor("name", "default"))
+  val extractor = new ScalaOptionStringExtractor("name", "default")
 
   "Extracting a parameter" should "have a name" in {
     extractor.getName should be("name")
   }
 
   it should "have a default value" in {
-    extractor.getDefaultStringValue should be("default")
+    extractor.getDefaultValueString should be("default")
   }
 
   it should "extract the first of a set of parameter values" in {
-    val params = new MultivaluedMapImpl()
+    val params = new MultivaluedStringMap()
     params.add("name", "one")
     params.add("name", "two")
     params.add("name", "three")
@@ -27,16 +26,16 @@ class ScalaOptionExtractorTest extends FlatSpec with Matchers {
   }
 
   it should "use the default value if no parameter exists" in {
-    val params = new MultivaluedMapImpl()
+    val params = new MultivaluedStringMap()
 
     val result = extractor.extract(params)
     result should equal(Some("default"))
   }
 
   "Extracting a parameter with no default value" should "return None" in {
-    val extractor = new ScalaOptionExtractor(new StringExtractor("name"))
+    val extractor = new ScalaOptionStringExtractor("name", null)
 
-    val params = new MultivaluedMapImpl()
+    val params = new MultivaluedStringMap()
 
     val result = extractor.extract(params)
     result should equal(None)
